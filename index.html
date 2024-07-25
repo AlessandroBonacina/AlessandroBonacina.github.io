@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+            min-height: 100vh; /* Ensure body takes at least the full viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .container {
+            flex: 1;
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .section {
+            padding: 20px;
+            margin: 40px 0;
+            background-color: #ecf0f1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .section h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .section a {
+            cursor: pointer;
+        }
+        .dashboard-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .dashboard {
+            background-color: #ecf0f1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(30% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .dashboard:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .menu {
+            display: none;
+            background-color: #f7f9fc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: #2c3e50;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .menu a:hover {
+            background-color: #ecf0f1;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            .dashboard {
+                flex: 1 1 calc(45% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .dashboard {
+                flex: 1 1 calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ALESSANDRO BONACINA PORTFOLIO</h1>
+</header>
+
+<div class="container">
+    <!-- Section 1: About Me -->
+    <div class="section" id="about-me">
+        <h2>About Me</h2>
+        <p>Hello! I am Alessandro Bonacina, an International Affairs analyst with experience in the field of Data Analysis. I have conducted data-driven research for ISPI and the Italian Ministry of Foreign Affairs. Here are some sample and real projects to showcase my skills in data analysis and data visualization. The projects are done using Tableau, Python, and SQL.</p>
+        <p>You can download my resume <a href="Alessandro_Bonacina_CV_ENG.pdf" download>here</a>.</p>
+        <p>You can also download my Europass CV <a href="Alessandro_Bonacina_Europass.pdf" download>here</a>.</p>
+        <p>Contact Email: <a href="mailto:alessandro.bonacina98@gmail.com">alessandro.bonacina98@gmail.com</a></p>
+    </div>
+    <!-- Dashboard Sections -->
+    <div class="dashboard-section">
+        <div class="dashboard" onclick="toggleMenu('macro-menu')">
+            <h2>Macroeconomic Dashboard</h2>
+            <p>Insights and visualizations related to macroeconomic data (2023)</p>
+            <div class="menu" id="macro-menu">
+                <a href="https://public.tableau.com/views/MacroeconomicDashboard-Datafor2023/Dashboard1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">View Dashboard</a>
+            </div>
+        </div>
+        <div class="dashboard" onclick="toggleMenu('hr-menu')">
+            <h2>HR Dashboard</h2>
+            <p>Human Resources analytics and visualizations</p>
+            <div class="menu" id="hr-menu">
+                <a href="https://public.tableau.com/views/HRAnalyticsDashboard_17219222869900/HRDashboard?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">View Dashboard</a>
+            </div>
+        </div>
+        <div class="dashboard" onclick="toggleMenu('ispi-menu')">
+            <h2>ISPI Projects</h2>
+            <p>Projects completed for the Italian Institute for International Political Studies (ISPI)</p>
+            <div class="menu" id="ispi-menu">
+                <a href="Alessandro Bonacina - ISPI Projects.pdf" target="_blank">View ISPI Projects PDF</a>
+            </div>
+        </div>
+        <div class="dashboard" onclick="toggleMenu('python-menu')">
+            <h2>Python Projects</h2>
+            <p>Various data analysis and visualization projects using Python</p>
+            <div class="menu" id="python-menu">
+                <a href="https://github.com/AlessandroBonacina/Data-Analysis-Python/blob/main/US_presidential_data_final.ipynb" target="_blank">US Presidential Elections (1976 - 2020) Data Exploration</a>
+                <a href="https://github.com/AlessandroBonacina/Data-Analysis-Python/blob/main/StackOverflow_developer_survey_2020_dataset_analysis.ipynb" target="_blank">StackOverflow Developer Survey (2020) Dataset Analysis</a>
+            </div>
+        </div>
+        <div class="dashboard" onclick="toggleMenu('sql-menu')">
+            <h2>SQL Projects</h2>
+            <p>Database querying and management projects using SQL</p>
+            <div class="menu" id="sql-menu">
+                <a href="https://github.com/AlessandroBonacina/Data-Analysis-SQL/blob/main/covid_data_final.sql" target="_blank">COVID-19 Data Exploration</a>
+                <a href="https://github.com/AlessandroBonacina/Data-Analysis-SQL/blob/main/unhcr_data_2021.sql" target="_blank">UNHCR Refugees Data Exploration</a>
+            </div>
+        </div>
+        <div class="dashboard" onclick="toggleMenu('tableau-menu')">
+            <h2>Tableau Projects</h2>
+            <p>Interactive dashboards and visualizations created using Tableau</p>
+            <div class="menu" id="tableau-menu">
+                <a href="https://public.tableau.com/app/profile/alessandro.bonacina/viz/UNHCR_2021_1/Dashboard1" target="_blank">Tableau Visualization UNHCR 2021 Data</a>
+                <a href="https://public.tableau.com/views/UNHCR_2022/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">Tableau Visualization UNHCR 2022 Data</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu(menuId) {
+        const allMenus = document.querySelectorAll('.menu');
+        allMenus.forEach(menu => {
+            if (menu.id !== menuId) {
+                menu.style.display = 'none';
+            }
+        });
+        const menu = document.getElementById(menuId);
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
+
+
